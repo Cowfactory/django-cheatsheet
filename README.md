@@ -55,4 +55,33 @@ def route3_name(request, variable_name):
   return render(request, 'template3.html', {'data': variable_name})
 ```
 
+### How to get running from start (boilerplate)
+Add application name to settings.py
+Include main_app.urls to django project's urls.py
+Create templates folder within app directory
+Create urls.py file within app directory
+Add static folder
+
+Step 1. Create URL route 
+  `path('', views.index, name="index")`
+Step 2. Create the View
+  ```
+  def index(request):
+    return render(request, 'index.html')
+  ```
+Step3. Create the template
+  Create base.html:
+    ```
+    !html boilerplate...
+    {% block content %}
+    {% endblock %}
+    ```
+  Create index.html:
+    ```
+    {% extends 'base.html' %}
+    {% block content %}
+    {% endblock %}
+    ```
+
+  
 
